@@ -1,0 +1,235 @@
+body {
+  font-family: "Inter", serif;
+  font-optical-sizing: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  position: relative;
+  overflow: hidden; /* Evita que o body tenha overflow */
+  transition: background-color 0.3s, color 0.3s;
+}
+
+:root {
+  --background-color: black;
+  --text-color: white;
+}
+
+body.light-theme {
+  --background-color: white;
+  --text-color: black;
+}
+
+.toggle-container {
+  position: absolute;
+  top: 10px; /* Ajuste conforme necessário */
+  left: 10px; /* Ajuste conforme necessário */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.login-container,
+.task-iniciar {
+  transition: transform 0.3s ease;
+}
+
+.login-container.shift-left,
+.task-iniciar.shift-left {
+  transform: translateX(-70%);
+}
+
+.login-container {
+  text-align: center;
+  background: #d3d3d3;
+  width: 30%;
+  height: 80%;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: black; /* Cor fixa para o texto dentro da caixa de login */
+  position: relative; /* Necessário para posicionar o toggle-container */
+}
+
+.login-container label,
+.login-container input,
+.login-container button,
+.login-container h2,
+.login-container p {
+  color: black; /* Cor fixa para os elementos de texto */
+}
+
+.login-container input {
+  background-color: white; /* Cor fixa para o fundo dos inputs */
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 15px;
+  width: 90%;
+}
+
+.login-container button {
+  background-color: #5CB7F4; /* Cor fixa para o fundo do botão */
+  color: white; /* Cor fixa para o texto do botão */
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  width: 90%;
+  cursor: pointer;
+}
+
+.logo {
+  width: 300px; 
+}
+
+h2 {
+  margin: 0 0 10px;
+}
+
+label {
+  display: block;
+  margin: 10px 0 5px;
+  font-weight: bold;
+  width: 90%;
+  text-align: left;
+}
+
+input {
+  width: 90%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+button {
+  width: 90%;
+  padding: 10px;
+  background-color: #5CB7F4;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.task-iniciar {
+  display: flex;
+  background: #005793;
+  align-items: center;
+  justify-content: space-between;
+  width: 30%;
+  height: 60px;
+  padding: 0 20px;
+  border-radius: 10px;
+  position: absolute;
+  bottom: 48px;
+}
+
+.iniciar {
+  height: 100%;
+}
+
+ul {
+  height: 100%;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  padding: 0;
+  margin: 0;
+}
+
+.button {
+  margin-left: -14px;
+  height: 80%;
+  padding: 4px 0;
+}
+
+.button button {
+  padding: 0px 10px;
+  height: 100%;
+  transition: all 0.5s ease; /* Adiciona uma transição suave */
+}
+
+.button button:hover {
+  filter: brightness(1.2);
+  transform: rotate(360deg); /* Faz o botão rodar */
+}
+
+.button img {
+  width: 100%;
+  height: auto;
+  max-width: 30px;
+}
+
+.terminal-container {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50%;
+  height: 100%;
+  background: #333;
+  color: white;
+  overflow: hidden; /* Evita que o terminal ultrapasse os limites */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  z-index: 9999; /* Garantir que o terminal fique sobre os outros elementos */
+}
+
+.terminal {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  background-color: #444;
+}
+
+iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+#datetime {
+  color: white;
+  font-size: small;
+  text-align: center;
+  margin-right: -14px;
+}
+
+#datetime p {
+  margin: 0;
+  font-size: 12px;
+  text-align: right;
+}
+
+@keyframes shake {
+  0% { transform: translate(1px, 1px) rotate(0deg); }
+  10% { transform: translate(-1px, -2px) rotate(-1deg); }
+  20% { transform: translate(-3px, 0px) rotate(1deg); }
+  30% { transform: translate(3px, 2px) rotate(0deg); }
+  40% { transform: translate(1px, -1px) rotate(1deg); }
+  50% { transform: translate(-1px, 2px) rotate(-1deg); }
+  60% { transform: translate(-3px, 1px) rotate(0deg); }
+  70% { transform: translate(3px, 1px) rotate(-1deg); }
+  80% { transform: translate(-1px, -1px) rotate(1deg); }
+  90% { transform: translate(1px, 2px) rotate(0deg); }
+  100% { transform: translate(1px, -2px) rotate(-1deg); }
+}
+
+#terminal-button:hover {
+  animation: shake 0.5s;
+  animation-iteration-count: infinite;
+}

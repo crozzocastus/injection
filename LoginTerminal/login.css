@@ -1,0 +1,130 @@
+body {
+    background-color: black; /* Cor de fundo preta */
+    color: green; /* Cor do texto verde */
+    font-family: monospace; /* Fonte monoespaçada */
+    white-space: pre; /* Preserva espaços em branco */
+    padding: 20px; /* Espaçamento interno */
+    display: flex; /* Usa flexbox para o layout */
+    flex-direction: column; /* Direção da flexbox em coluna */
+    align-items: center; /* Alinha itens ao centro */
+    justify-content: flex-start; /* Justifica itens no início */
+    min-height: 100vh; /* Altura mínima de 100% da altura da janela */
+    box-sizing: border-box; /* Inclui padding e border no tamanho total */
+}
+
+.ascii-art {
+    padding: 10px; /* Espaçamento interno */
+    background-color: black; /* Cor de fundo preta */
+    color: green; /* Cor do texto verde */
+    font-family: monospace; /* Fonte monoespaçada */
+    white-space: pre; /* Preserva espaços em branco */
+    margin-bottom: 40px; /* Espaçamento inferior */
+    text-align: center; /* Centraliza o texto */
+    width: 100%; /* Largura total */
+    box-sizing: border-box; /* Inclui padding e border no tamanho total */
+    line-height: 1; /* Reduz o espaçamento entre linhas */
+}
+
+#boot-screen {
+    transition: opacity 1s ease-out; /* Transição suave de opacidade */
+    max-height: 100vh; /* Limita a altura máxima à altura da janela */
+    overflow-y: auto; /* Permite rolagem vertical */
+    width: 100%; /* Largura total */
+    box-sizing: border-box; /* Inclui padding e border no tamanho total */
+}
+
+.boot-line {
+    display: none; /* Inicialmente oculta as linhas de boot */
+}
+
+#login-form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Alinha itens ao início */
+    justify-content: center;
+    position: absolute; /* Posiciona a caixa de login de forma absoluta */
+    top: 50%; /* Centraliza verticalmente */
+    left: 50%; /* Centraliza horizontalmente */
+    transform: translate(-50%, -50%); /* Ajusta a posição para centralizar */
+    background-color: black; /* Cor de fundo preta */
+    color: green; /* Cor do texto verde */
+    font-family: monospace; /* Fonte monoespaçada */
+    white-space: pre; /* Preserva espaços em branco */
+    padding: 20px; /* Espaçamento interno */
+    border: 1px solid green; /* Borda verde */
+    opacity: 0; /* Inicialmente invisível */
+    visibility: hidden; /* Inicialmente invisível */
+    transition: opacity 1s ease-in, visibility 1s ease-in; /* Transição suave de opacidade e visibilidade */
+    width: 100%; /* Largura total */
+    max-width: 400px; /* Largura máxima */
+    box-sizing: border-box; /* Inclui padding e border no tamanho total */
+}
+
+#login-form h2 {
+    text-align: center; /* Centraliza o texto */
+    width: 100%; /* Garante que o título ocupe toda a largura do formulário */
+    margin-bottom: 20px; /* Espaçamento inferior */
+}
+
+#login-form form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+#login-form label {
+    font-size: 1.2em; /* Aumenta ligeiramente o tamanho da fonte dos rótulos */
+    margin-bottom: 5px;
+}
+
+#login-form input {
+    margin-bottom: 15px;
+}
+
+#login-form .input-group {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    flex-direction: row; /* Alinha os itens em linha */
+}
+
+#login-form .input-group label {
+    flex: 1;
+    margin-right: 10px; /* Espaçamento à direita do rótulo */
+}
+
+#login-form .input-group input {
+    flex: 2;
+    margin-left: 10px; /* Espaçamento à esquerda do campo de entrada */
+}
+
+#user-input {
+  background-color: #000;
+  color: #9b30ff;
+  border: 0px solid #333;
+  padding: 5px;
+  font-family: Consolas, monospace;
+  width: 50%;
+  max-width: 600px;
+  outline: none;
+  caret-color: red;
+  margin-bottom: 10px;
+}
+
+#user-input::placeholder {
+  color: #9b30ff;
+}
+
+.current-line {
+    background-color: rgba(0, 255, 0, 0.2); /* Destaque para a linha atual */
+}
+
+/* Media queries para responsividade */
+@media (max-width: 600px) {
+    .ascii-art {
+        font-size: 12px; /* Reduz o tamanho da fonte em telas menores */
+    }
+    #login-form {
+        padding: 10px; /* Reduz o espaçamento interno em telas menores */
+    }
+}

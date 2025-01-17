@@ -1,0 +1,112 @@
+body {
+  background-color: #000;
+  color: #0f0;
+  font-family: Consolas, monospace;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  height: 100vh;
+}
+.website {
+  flex: 1;
+  background-color: #111;
+  border-right: 2px solid #333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.jogo {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.ascii-art { 
+  animation: rainbow 5s linear infinite; /* Rainbow animation */
+  white-space: pre; /* Preserve whitespace */
+  font-size: 16px; /* Adjust font size */
+}
+@keyframes rainbow {
+  0% { color: red; }
+  14% { color: orange; }
+  28% { color: yellow; }
+  42% { color: green; }
+  57% { color: blue; }
+  71% { color: indigo; }
+  85% { color: violet; }
+  100% { color: red; }
+}
+.website iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  box-shadow: 0 0 10px #222;
+}
+.terminal {
+  flex: 1;
+  background-color: #000;
+  border-left: 2px solid #333;
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+  padding-top: 20px;
+  box-shadow: 0 0 10px #333;
+  overflow-y: auto;
+  width: 500px;
+}
+.terminal-header {
+  background-color: #333;
+  color: #fff;
+  padding: 6px;
+  font-size: 14px;
+  text-align: center;    
+  width: 100%;  
+  position: fixed;  
+  top: 0;  
+  left: 0;
+  z-index: 1000;      
+}
+pre {
+  white-space: pre; 
+  font-family: Consolas, monospace; 
+  overflow: auto; 
+  font-size: 16px; 
+  line-height: 1.5; 
+  width: auto ;
+}
+.line { 
+  margin: 0; 
+  padding: 0; 
+}
+.line .path { 
+  color: rgb(0, 204, 255); 
+}
+.path { 
+  color: #0cf; 
+}
+.line .output { 
+  color: #0f0; 
+}
+#user-input {
+  background-color: #000;
+  color: #9b30ff;
+  border: 0px solid #333;
+  padding: 5px;
+  font-family: Consolas, monospace;
+  width: 30%;
+  max-width: 600px;
+  outline: none;
+  caret-color: red;
+}
+#user-input::placeholder { 
+  color: #9b30ff; 
+}
+.sqlmapa { 
+  width: 100%; 
+  padding: 25px; 
+}

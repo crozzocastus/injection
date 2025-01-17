@@ -1,0 +1,57 @@
+body {/* Estilo global para a página */
+  margin: 0;
+  padding: 0;
+  background-color: #000000; /* Fundo preto */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh; /* Altura total da janela */
+  font-family: Arial, sans-serif;
+  color: white; /* Cor do texto */
+}
+
+#gameBar { /* Barra de informações do jogo */
+  background-color: #222; /* Fundo cinza escuro */
+  color: white; /* Texto branco */
+  font-size: 20px;
+  width: 600px; /* Largura fixa */
+  padding: 10px;
+  text-align: left; /* Alinha o conteúdo à esquerda */
+  border-radius: 5px; /* Bordas arredondadas */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5); /* Sombra */
+  margin-bottom: 20px; /* Espaço abaixo da barra */
+  display: flex; /* Flexbox para alinhamento */
+  align-items: center; /* Alinha verticalmente */
+  gap: 10px; /* Espaçamento entre os elementos */
+}
+
+#lifeCount { /* Indicador de vidas */
+  margin: 0; /* Remove margens externas */
+  font-size: 20px; /* Tamanho do texto */
+  color: #ff0000; /* Vermelho para destacar */
+  display: inline-block; /* Para evitar quebra de linha */
+}
+
+canvas { /* Canvas para o jogo */
+  border: 2px solid #444; /* Borda cinza escuro */
+  background-color: black; /* Fundo preto */
+  width: 600px; /* Ajusta a largura */
+  height: 600px; /* Ajusta a altura */
+}
+
+#message, #endMessage { /* Mensagens (derrota ou vitória) */
+  font-size: 20px;
+  margin-top: 20px;
+  display: none; /* Ocultas inicialmente */
+  text-align: center;
+  font-weight: bold;
+}
+
+#message {
+  color: red; /* Texto vermelho */
+}
+
+#endMessage {
+  color: green; /* Texto verde */
+}
